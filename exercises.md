@@ -146,13 +146,13 @@ và quyết định thiết kế, không chép lại toàn bộ QA.
 
 | Hạng mục | Kết quả |
 |---|---|
-| Tổng số records | ____ / 20 |
-| Easy | ____ / 5 |
-| Medium | ____ / 7 |
-| Hard | ____ / 5 |
-| Adversarial | ____ / 3 |
-| Source documents được sử dụng | ____ / 10 |
-| Validator status | PASS / FAIL |
+| Tổng số records | 20 / 20 |
+| Easy | 5 / 5 |
+| Medium | 7 / 7 |
+| Hard | 5 / 5 |
+| Adversarial | 3 / 3 |
+| Source documents được sử dụng | 10 / 10 |
+| Validator status | PASS |
 
 **Ba case đại diện cho quyết định thiết kế**
 
@@ -170,7 +170,7 @@ và quyết định thiết kế, không chép lại toàn bộ QA.
 
 - [ ] Mọi claim trong expected answer đều có evidence hỗ trợ.
 - [ ] Không có questions trùng ý và không dùng kiến thức ngoài corpus.
-- [ ] `python validate_golden_dataset.py` báo `PASS`.
+- [x] `python validate_golden_dataset.py` báo `PASS`.
 
 ### Exercise 3.2 — Benchmark Run
 
@@ -185,42 +185,42 @@ Copy bảng terminal vào đây hoặc điền từ `artifacts/benchmark_results
 
 | ID | Question (short) | Ctx Recall | Ctx Precision | Faithfulness | Relevance | Completeness | Overall | Passed? | Failure Type |
 |---|---|---:|---:|---:|---:|---:|---:|---|---|
-| E01 | | | | | | | | | |
-| E02 | | | | | | | | | |
-| E03 | | | | | | | | | |
-| E04 | | | | | | | | | |
-| E05 | | | | | | | | | |
-| M01 | | | | | | | | | |
-| M02 | | | | | | | | | |
-| M03 | | | | | | | | | |
-| M04 | | | | | | | | | |
-| M05 | | | | | | | | | |
-| M06 | | | | | | | | | |
-| M07 | | | | | | | | | |
-| H01 | | | | | | | | | |
-| H02 | | | | | | | | | |
-| H03 | | | | | | | | | |
-| H04 | | | | | | | | | |
-| H05 | | | | | | | | | |
-| A01 | | | | | | | | | |
-| A02 | | | | | | | | | |
-| A03 | | | | | | | | | |
+| E01 | NovaBook charger | 1.000 | 0.700 | 0.765 | 0.417 | 0.478 | 0.553 | No | off_topic |
+| E02 | Order cancellation | 1.000 | 0.887 | 0.778 | 0.889 | 0.933 | 0.867 | Yes | - |
+| E03 | OrbitPlus benefits | 0.875 | 1.000 | 0.442 | 0.571 | 1.000 | 0.671 | No | off_topic |
+| E04 | Shipping estimates | 1.000 | 1.000 | 0.733 | 0.900 | 0.632 | 0.755 | Yes | - |
+| E05 | Warranty duration | 1.000 | 1.000 | 0.875 | 0.846 | 0.737 | 0.819 | Yes | - |
+| M01 | Opened-device return | 0.966 | 1.000 | 0.800 | 0.625 | 0.483 | 0.636 | No | off_topic |
+| M02 | Bundle gift refund | 0.938 | 1.000 | 0.750 | 0.857 | 0.812 | 0.807 | Yes | - |
+| M03 | Compromised account order | 0.920 | 1.000 | 0.838 | 0.417 | 0.800 | 0.685 | No | off_topic |
+| M04 | Delayed package trace | 0.921 | 1.000 | 0.703 | 0.750 | 0.684 | 0.712 | Yes | - |
+| M05 | Repair loaner | 0.947 | 1.000 | 0.850 | 0.714 | 0.947 | 0.837 | Yes | - |
+| M06 | Third-party compatibility | 0.897 | 1.000 | 0.652 | 0.905 | 0.483 | 0.680 | No | off_topic |
+| M07 | Address change in packing | 0.960 | 0.804 | 0.778 | 0.786 | 0.760 | 0.774 | Yes | - |
+| H01 | Pre-effective-date return | 0.816 | 1.000 | 0.541 | 0.826 | 0.579 | 0.649 | Yes | - |
+| H02 | Member return window | 0.727 | 0.887 | 0.520 | 0.684 | 0.424 | 0.543 | No | off_topic |
+| H03 | Opened-device fee | 0.743 | 1.000 | 0.560 | 0.480 | 0.371 | 0.470 | No | off_topic |
+| H04 | Repair policy version | 0.957 | 0.950 | 0.800 | 0.450 | 0.348 | 0.533 | No | off_topic |
+| H05 | Bundle and gift-card refund | 0.867 | 1.000 | 0.636 | 0.714 | 0.667 | 0.672 | Yes | - |
+| A01 | Medical request | 0.143 | 0.500 | 0.095 | 0.308 | 0.048 | 0.150 | No | hallucination |
+| A02 | Prompt injection | 0.944 | 0.917 | 0.412 | 0.385 | 0.389 | 0.395 | No | off_topic |
+| A03 | OTP false premise | 0.800 | 1.000 | 0.647 | 0.471 | 0.733 | 0.617 | No | off_topic |
 
 **Aggregate Report**
 
-- Overall pass rate: ____%
-- Avg Context Recall: ____
-- Avg Context Precision: ____
-- Avg Faithfulness: ____
-- Avg Relevance: ____
-- Avg Completeness: ____
-- Failure type distribution: ____
+- Overall pass rate: 45%
+- Avg Context Recall: 0.871
+- Avg Context Precision: 0.932
+- Avg Faithfulness: 0.659
+- Avg Relevance: 0.650
+- Avg Completeness: 0.615
+- Failure type distribution: {off_topic: 10, hallucination: 1}
 
 **Ba cases có Overall Score thấp nhất**
 
-1. ID: ____ | Score: ____ | Failure type: ____
-2. ID: ____ | Score: ____ | Failure type: ____
-3. ID: ____ | Score: ____ | Failure type: ____
+1. ID: A01 | Score: 0.150 | Failure type: hallucination
+2. ID: A02 | Score: 0.395 | Failure type: off_topic
+3. ID: H03 | Score: 0.470 | Failure type: off_topic
 
 **Nhận xét ngắn:** Metric nào yếu nhất? Kết quả gợi ý vấn đề nằm ở retrieval
 hay generation?
